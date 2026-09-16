@@ -1,0 +1,12 @@
+# UPSTREAM, EXTENDED: taulantkoka/virtual-dummies (Koka et al., 2026), extended for the GLM and Cox experiments (Mehler, Koka, Muma, 2026). GPLv3, see NOTICE.
+# Install vd_selectors first: pip install -e .
+numpy>=1.22
+scipy>=1.9
+pandas>=1.5
+matplotlib>=3.5        # Fig. 1
+joblib>=1.2            # parallel replicates
+tqdm>=4.60
+scikit-learn>=1.1
+scikit-survival>=0.22  # Cox Lasso and the Cox knockoff statistic
+knockpy>=1.3           # knockoff construction
+skglm>=0.4             # Poisson lasso for the knockoff statistic

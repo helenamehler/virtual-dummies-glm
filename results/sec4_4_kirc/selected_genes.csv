@@ -1,0 +1,10 @@
+method,gene,z_cox,r_logt,r_event
+vd_afs_cox,ZIC2,9.115,-0.116,0.381
+vd_afs_cox,HOXA2,6.224,-0.09,0.263
+vd_afs_cox,BARX1,7.684,-0.128,0.269
+vd_afs_cox,SLC16A12,-8.958,0.198,-0.34
+vd_afs_cox,SORBS2,-8.757,0.174,-0.32
+vd_afs_cox,GPR78,8.348,-0.176,0.314
+vd_afs_cox,DONSON,9.263,-0.189,0.349
+vd_afs_cox,SOWAHB,-9.994,0.21,-0.355
+vd_afs_ols,SMIM24,-7.278,0.23,-0.217

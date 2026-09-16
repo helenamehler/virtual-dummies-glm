@@ -1,0 +1,20 @@
+{
+  "run_name": "poisson",
+  "methods": ["vd", "ad"],
+  "method_desc": {"vd": "VD-AFS-Poisson (Eigen)", "ad": "AD-AFS-Poisson (Eigen, this paper)"},
+  "family": "poisson",
+  "AFS_RHO": 1,
+  "AMP_SD": 0.5,
+  "BASE_RATE": 2,
+  "K_ACTIVE": 10,
+  "mem_unit": "MiB",
+  "timestamp": "20260907_083158",
+  "N_FIXED": 10000,
+  "T_SELECT": 10,
+  "REPS": 20,
+  "BASE_SEED": 123,
+  "P_LIST": [100000],
+  "L_MULT": [5],
+  "VD_MEM_CAP_GB": 70,
+  "ADPOIS_MEM_CAP_GB": 70
+}

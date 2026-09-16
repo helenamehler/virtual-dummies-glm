@@ -1,0 +1,21 @@
+{
+  "run_name": "cox",
+  "methods": ["vd", "ad"],
+  "method_desc": {"vd": "VD-AFS-Cox (Eigen)", "ad": "AD-AFS-Cox (Eigen, this paper)"},
+  "family": "cox",
+  "ties": "breslow",
+  "AFS_RHO": 1,
+  "AMP": 1,
+  "CENS_RATE": 0.3,
+  "K_ACTIVE": 10,
+  "mem_unit": "MiB",
+  "timestamp": "20260907_140358",
+  "N_FIXED": 10000,
+  "T_SELECT": 10,
+  "REPS": 20,
+  "BASE_SEED": 123,
+  "P_LIST": [100000],
+  "L_MULT": [5],
+  "VD_MEM_CAP_GB": 70,
+  "ADCOX_MEM_CAP_GB": 70
+}

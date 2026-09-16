@@ -1,0 +1,20 @@
+{
+  "run_name": "logistic",
+  "methods": ["vd", "ad"],
+  "method_desc": {"vd": "VD-AFS-Logistic (Eigen)", "ad": "AD-AFS-Logistic (Eigen, this paper)"},
+  "family": "logistic",
+  "AFS_RHO": 1,
+  "SNR_REF": 1,
+  "AMP": 1,
+  "K_ACTIVE": 10,
+  "mem_unit": "MiB",
+  "timestamp": "20260907_085932",
+  "N_FIXED": 10000,
+  "T_SELECT": 10,
+  "REPS": 20,
+  "BASE_SEED": 123,
+  "P_LIST": [100000],
+  "L_MULT": [5],
+  "VD_MEM_CAP_GB": 70,
+  "ADLOGIT_MEM_CAP_GB": 70
+}

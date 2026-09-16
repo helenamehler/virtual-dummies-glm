@@ -1,0 +1,17 @@
+# UPSTREAM, EXTENDED: taulantkoka/virtual-dummies (Koka et al., 2026), modified for GLM/Cox score-based selection (Mehler, Koka, Muma, 2026). GPLv3, see NOTICE.
+[build-system]
+requires = ["scikit-build-core>=0.9", "pybind11>=2.12"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "vd-selectors"
+version = "0.1.0"
+description = "Virtual dummy forward selectors with FDR control for linear models, GLMs and Cox regression"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22"]
+
+[project.optional-dependencies]
+dev = ["pytest", "scipy"]
+
+[tool.scikit-build]
+cmake.build-type = "Release"

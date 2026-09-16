@@ -1,0 +1,7 @@
+method,key,error_criterion,n_reps,fdp,fdp_se,tpp,tpp_se,n_selected,n_selected_se,runtime_min
+VD-Multinomial,trex_multinom,FDR,99,0.048,0.008,0.453,0.018,5.788,0.245,6.512
+"VD-Bernoulli, OvR",trex_logit_ovr,FDR,98,0.0,0.0,0.0,0.0,0.0,0.0,7.19
+VD-Gaussian on labels,trex_gauss,FDR,99,0.018,0.007,0.181,0.015,2.242,0.187,4.269
+Model-X Knockoffs,ko_mx_multinom,FDR,50,0.0,0.0,0.0,0.0,0.0,0.0,60.248
+Multinomial Score + BH,bh_multinom,"FDR, marginal",99,0.279,0.017,0.579,0.017,10.343,0.422,0.137
+Multinomial Score + BY,by_multinom,"FDR, marginal",99,0.121,0.014,0.474,0.017,6.677,0.27,0.02

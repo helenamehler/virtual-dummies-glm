@@ -1,0 +1,135 @@
+================================================================================
+NOTICE - provenance and attribution
+================================================================================
+
+This repository is a derivative work. Most of the C++ core, the build system and
+the HAPNEST genotype pipeline come from
+
+    virtual-dummies
+    Taulant Koka, Jasin Machkour, Daniel P. Palomar, Michael Muma
+    https://github.com/taulantkoka/virtual-dummies
+
+    Koka, T., Machkour, J., Palomar, D. P., & Muma, M. (2026).
+    Virtual Dummies: Enabling Scalable FDR-Controlled Variable Selection via
+    Sequential Sampling of Null Features.
+
+and are used and redistributed here under the GNU General Public License v3,
+the license of the upstream project. The full license text is in LICENSE and
+applies to this repository as a whole.
+
+What this repository adds is the extension of the virtual dummy construction
+from the linear model to score-based forward selection for Bernoulli, Poisson,
+multinomial and Cox responses, plus the experiments and the two applications
+reported in
+
+    Mehler, H., Koka, T., & Muma, M. (2026).
+    FDR-Controlled Variable Selection for Generalized Linear Models with
+    Virtual Dummies. Submitted to ICASSP 2026.
+
+The T-Rex selector, which both papers build on, is
+
+    Machkour, J., Muma, M., & Palomar, D. P. (2025). The terminating-random
+    experiments selector: Fast high-dimensional variable selection with false
+    discovery rate control. Signal Processing, 231, 109894.
+
+
+--------------------------------------------------------------------------------
+File-level provenance
+--------------------------------------------------------------------------------
+
+Every source file carries a one-line provenance header. Three labels are used.
+
+  UPSTREAM            Taken from taulantkoka/virtual-dummies without changes.
+  UPSTREAM, EXTENDED  Upstream file, modified here for GLM and Cox selection.
+  NEW                 Written for this work.
+
+
+C++ core and Python package
+---------------------------
+
+UPSTREAM
+    src/vd_lars.hpp / .cpp
+    src/vd_omp.hpp / .cpp
+    src/vd_afs.hpp / .cpp
+    src/memory_mapped_eigen_matrix.hpp
+
+UPSTREAM, EXTENDED
+    src/vd_common.hpp               GLM options: cox_status, cox_efron, rho
+    src/vd_base.hpp / .cpp          score-driven basis growth, multi-axis reveal
+    src/vd_afs_logistic.hpp / .cpp  reworked score path and IRLS refit
+    src/trex.hpp / .cpp             solver dispatch for the four new families
+    src/bindings.cpp                pybind11 bindings for the new solvers
+    vd_selectors/__init__.py        exports the new solver classes
+    CMakeLists.txt                  the new solvers and the benchmark targets
+    pyproject.toml
+
+NEW
+    src/vd_afs_poisson.hpp / .cpp
+    src/vd_afs_multinomial.hpp / .cpp
+    src/vd_afs_cox.hpp / .cpp
+
+The compiled module is built from src/ and installed into vd_selectors/, which
+is why that directory holds only __init__.py in a fresh checkout.
+
+
+Experiments
+-----------
+
+UPSTREAM
+    experiments/sec4_3_hapnest/1_genotype_generation/config_100k_template.yaml
+    experiments/sec4_3_hapnest/1_genotype_generation/slurm_geno_chr.sh
+    experiments/sec4_3_hapnest/1_genotype_generation/submit_all_runs.sh
+    experiments/sec4_3_hapnest/2_preprocessing/preprocess_hapnest_small.py
+
+UPSTREAM, EXTENDED
+    experiments/requirements.txt
+    experiments/sec4_3_hapnest/requirements.txt
+    experiments/sec4_3_hapnest/submit_preprocess_small.sh   paths made configurable
+
+NEW
+    everything else under experiments/, in particular
+
+    Sec. 4.1, experiments/sec4_1_equivalence/
+        sim_snr_logistic.py, sim_snr_poisson.py, sim_snr_cox.py,
+        sim_snr_multinomial.py, plot_snr_panel.py, snr_glm.py, knockoff_glm.py,
+        AD_AFS_Logistic.py, AD_AFS_Poisson.py, AD_AFS_Multinomial.py,
+        AD_AFS_Cox.py, submit_sweep.sh
+
+    Sec. 4.2, experiments/sec4_2_memory_runtime/
+        bench_memory_logistic.cpp, bench_memory_poisson.cpp,
+        bench_memory_multinomial.cpp, bench_memory_cox.cpp,
+        bench_harness.hpp, summarize_benchmark.py, submit_benchmark.sh,
+        ad_afs_logistic.hpp, ad_afs_poisson.hpp, ad_afs_multinomial.hpp,
+        ad_afs_cox.hpp
+
+    Sec. 4.3, experiments/sec4_3_hapnest/
+        3_4_benchmark/, run_multinomial_benchmark.sh, run_knockoff_rows.sh,
+        make_table2.py, prepare_hapnest_small.sh,
+        2_preprocessing/download_hapnest_small.py,
+        2_preprocessing/arrange_hapnest_runs.py
+        The benchmark scripts are adapted from the binary versions of the
+        upstream pipeline.
+
+    Sec. 4.4, experiments/sec4_4_kirc/
+        kirc_data.py, kirc_selection.py, cox_knockoff.py, make_table3.py
+
+
+Third-party code
+----------------
+
+    extern/eigen-5.0.0/    Eigen, MPL2. Vendored by the upstream project.
+                           See extern/eigen-5.0.0/COPYING.* for its licenses.
+
+The optional competitor arms call knockpy, skglm and scikit-survival. Those are
+dependencies, not vendored, and keep their own licenses.
+
+
+--------------------------------------------------------------------------------
+Data
+--------------------------------------------------------------------------------
+
+No raw data is redistributed here. The HAPNEST genotypes were simulated by
+Koka et al. (2026) and are available from Harvard Dataverse,
+doi:10.7910/DVN/RZ3FZT; experiments/sec4_3_hapnest/prepare_hapnest_small.sh
+downloads them. The TCGA-KIRC expression and survival data is downloaded from
+UCSC Xena by experiments/sec4_4_kirc/kirc_data.py.

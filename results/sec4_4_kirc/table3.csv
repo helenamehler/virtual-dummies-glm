@@ -1,0 +1,6 @@
+method,key,error_criterion,n_selected,T_stop,L,v_thresh
+Marginal Cox + BH,bh_cox,"FDR, marginal",10837,,,
+Marginal Cox + BY,by_cox,"FDR, marginal",7001,,,
+"Cox Lasso, CV",cox_lasso,none,28,,,
+VD-AFS-Cox,vd_afs_cox,"FDR, joint",8,5,196200,0.65
+VD-AFS-Gaussian on log t,vd_afs_ols,"FDR, joint",1,7,196200,1.0

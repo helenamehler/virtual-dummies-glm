@@ -1,0 +1,75 @@
+cff-version: 1.2.0
+title: "Virtual dummies for GLMs and Cox regression"
+message: >-
+  If you use this software, please cite both the paper below and the upstream
+  virtual dummy work it builds on (see the preferred-citation and references
+  fields).
+type: software
+license: GPL-3.0
+# TODO: set this to the URL of this repository once it is pushed.
+# repository-code: "https://github.com/<your-user>/virtual-dummies-glm"
+authors:
+  - family-names: Mehler
+    given-names: Helena
+    affiliation: "Robust Data Science Group, TU Darmstadt"
+  - family-names: Koka
+    given-names: Taulant
+    affiliation: "Robust Data Science Group, TU Darmstadt"
+  - family-names: Muma
+    given-names: Michael
+    affiliation: "Robust Data Science Group, TU Darmstadt"
+keywords:
+  - false discovery rate
+  - variable selection
+  - generalized linear models
+  - Cox regression
+  - high-dimensional statistics
+preferred-citation:
+  type: conference-paper
+  title: >-
+    FDR-Controlled Variable Selection for Generalized Linear Models with
+    Virtual Dummies
+  authors:
+    - family-names: Mehler
+      given-names: Helena
+    - family-names: Koka
+      given-names: Taulant
+    - family-names: Muma
+      given-names: Michael
+  collection-title: >-
+    IEEE International Conference on Acoustics, Speech and Signal Processing
+    (ICASSP)
+  year: 2026
+references:
+  - type: article
+    title: >-
+      Virtual Dummies: Enabling Scalable FDR-Controlled Variable Selection via
+      Sequential Sampling of Null Features
+    authors:
+      - family-names: Koka
+        given-names: Taulant
+      - family-names: Machkour
+        given-names: Jasin
+      - family-names: Palomar
+        given-names: Daniel P.
+      - family-names: Muma
+        given-names: Michael
+    year: 2026
+    notes: >-
+      The upstream project. Most of the C++ core and the HAPNEST pipeline in
+      this repository come from it. See NOTICE.
+  - type: article
+    title: >-
+      The terminating-random experiments selector: Fast high-dimensional
+      variable selection with false discovery rate control
+    authors:
+      - family-names: Machkour
+        given-names: Jasin
+      - family-names: Muma
+        given-names: Michael
+      - family-names: Palomar
+        given-names: Daniel P.
+    journal: "Signal Processing"
+    volume: 231
+    start: 109894
+    year: 2025

@@ -1,0 +1,85 @@
+# --- macOS ---
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Icon
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+.installed.cfg
+MANIFEST
+
+# --- virtual environments ---
+.venv/
+venv/
+ENV/
+env/
+
+# --- compiled objects and extensions ---
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+
+# --- CMake / scikit-build ---
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+_deps/
+*.cmake
+_skbuild/
+
+# --- editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- data: nothing large is tracked ---
+# HAPNEST genotypes and TCGA-KIRC are downloaded into data/, see the READMEs.
+*.npz
+*.npy
+*.dat
+*.bed
+*.bim
+*.fam
+*.sample
+*.frq
+data/
+
+# --- run artefacts ---
+*.log
+slurm-*.out
+err_*.txt
+out_*.txt
+0_slurm/logs/
+**/logs/
+logs/
+**/ko_cache/
+
+# reruns
+results/sec4_3_hapnest/rerun/
+results/sec4_4_kirc/rerun/

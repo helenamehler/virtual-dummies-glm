@@ -1,0 +1,20 @@
+{
+  "run_name": "multinomial",
+  "methods": ["vd", "ad"],
+  "method_desc": {"vd": "VD-AFS-Multinomial (Eigen)", "ad": "AD-AFS-Multinomial (Eigen, this paper)"},
+  "family": "multinomial",
+  "N_CLASSES": 4,
+  "AFS_RHO": 1,
+  "AMP": 1,
+  "K_ACTIVE": 10,
+  "mem_unit": "MiB",
+  "timestamp": "20260907_085930",
+  "N_FIXED": 10000,
+  "T_SELECT": 10,
+  "REPS": 20,
+  "BASE_SEED": 123,
+  "P_LIST": [100000],
+  "L_MULT": [5],
+  "VD_MEM_CAP_GB": 70,
+  "ADMULTI_MEM_CAP_GB": 70
+}
