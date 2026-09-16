@@ -20,7 +20,7 @@ FDR guarantee carries over under the same assumptions. At `n = 10^4`,
 top of the 8.0 GB for `(X, y)`. The virtual version adds about 205 MB and runs
 2.2 to 2.5 times faster.
 
-**Most of the code here is not new.** The C++ core, the build system and the
+The C++ core, the build system and the
 HAPNEST genotype pipeline come from `taulantkoka/virtual-dummies` and are
 redistributed under its license, GPLv3. Every file says where it came from in
 its first line, and [NOTICE](NOTICE) lists the provenance file by file.
